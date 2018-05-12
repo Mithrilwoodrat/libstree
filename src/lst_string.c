@@ -179,6 +179,7 @@ lst_string_free(LST_String *string)
     free(string->data);
 
   free(string);
+  return;
 }
 
 
@@ -505,8 +506,9 @@ lst_stringset_free(LST_StringSet *set)
     {
       string = set->members.lh_first;
       LIST_REMOVE(set->members.lh_first, set);
-      lst_string_free(string);
+      //lst_string_free(string);
     }
 
   free(set);
+  return;
 }
